@@ -14,7 +14,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Nicehash Monitor"),
+        title: Text(
+          "Nicehash Monitor",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
       ),
       body: bodySelector(),
