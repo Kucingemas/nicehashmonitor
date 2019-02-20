@@ -18,16 +18,20 @@ class _DashboardPageState extends State<DashboardPage> {
         if (snapshot.connectionState == ConnectionState.done) {
           List workers = snapshot.data["result"]["workers"];
           if (snapshot.hasData) {
-            return Card(
-              child: ListTile(
-                title: Text("Active Worker(s): ${workers.length}"),
-              ),
-            );
+            return buildWorkerCard(workers);
           }
         } else {
           return CircularProgressIndicator();
         }
       },
+    );
+  }
+
+  buildWorkerCard(List workers) {
+    return Card(
+      child: ExpansionTile(
+        title: Text("Active Worker(s): ${workers.length}"),
+      ),
     );
   }
 }
