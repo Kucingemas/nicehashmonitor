@@ -7,7 +7,7 @@ class DashboardHandle {
 
   DashboardHandle(this._minerAddress);
 
-  Future<Map> getWorkerStatus() async {
+  Future<Map> getWorkerInfo() async {
     String url =
         "https://api.nicehash.com/api?method=stats.provider.workers&addr=$_minerAddress";
     http.Response response = await http.get(url);
